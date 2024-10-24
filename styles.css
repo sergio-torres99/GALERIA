@@ -1,0 +1,31 @@
+.galeria {
+    display: flex; /*Activa el modelo de caja flexible para un contenedor, lo que permite un diseño más eficiente y flexible de sus elementos hijos*/
+    flex-wrap: wrap; /*Controla cómo se comportan los elementos dentro de un contenedor cuando no hay suficiente espacio en la línea principal para acomodarlos*/
+    justify-content: center; /*Sirve para alinear y distribuir el espacio entre los elementos hijos a lo largo del eje principal (horizontalmente en una fila o verticalmente en una columna)*/ 
+    gap: 10px; /*Se utiliza para definir el espacio entre elementos en un contenedor flexible o de cuadrícula. */
+    max-width: 800px; /*Se utiliza para establecer un ancho máximo para un elemento. */
+    margin: 0 auto; /*Elimina cualquier margen predeterminado que el navegador aplica por defecto, 0: Este valor establece el margen superior e inferior del elemento en 0 píxeles, auto: Este valor se aplica al margen izquierdo y derecho el navegador calcula automáticamente el espacio disponible en el contenedor y distribuye este espacio de manera equitativa*/
+}
+
+.galeria img {
+    width: 23%; /*Establece el ancho de un elemento*/
+    height: auto; /*Se utiliza para establecer la altura de un elemento*/
+    object-fit: cover; /*Se utiliza para controlar cómo se ajusta el contenido de un elemento img o video*/
+    border-radius: 5px; /*Se utiliza para redondear las esquinas de un elemento*/
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /*Se utiliza para añadir sombras a los elementos, se esta usando un shorthand el cual corresponde respectivamente a (Desplazamiento Horizontal, Desplazamiento Vertical, Difuminado, Color)*/
+    transition: all 0.3s ease; /*Permite especificar cómo deben animarse los cambios en las propiedades CSS de un elemento cuando se producen, all: Este valor indica que la transición se aplicará a todas las propiedades que cambien en el elemento, 0.3s: Este valor establece la duración de la transición en segundos, ease: Este es el tipo de función de temporización.*/
+}
+
+@media (max-width: 768px) { /*@media: Esta regla permite aplicar estilos CSS específicos basados en las características del dispositivo, como el ancho de la pantalla. En este caso, se está utilizando para ajustar el diseño según el ancho de la ventana del navegador.*/
+    .galeria img {
+        width: 48%; /*Esta consulta de medios se activa cuando el ancho de la pantalla es de 768 píxeles o menos. Esto generalmente se utiliza para dispositivos tablet o pantallas más pequeñas.
+        Dentro de esta consulta, se define que las imágenes dentro de la clase .galeria tendrán un ancho del 48% del contenedor en el que se encuentran.*/
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria img {
+        width: 95%; /*Esta segunda consulta se activa cuando el ancho de la pantalla es de 480 píxeles o menos. Esto se aplica típicamente a dispositivos móviles, como teléfonos inteligentes.
+        En este caso, las imágenes dentro de .galeria tendrán un ancho del 95%, lo que permite que ocupen casi todo el espacio del contenedor, lo que es útil para pantallas más pequeñas.*/
+    }
+}
